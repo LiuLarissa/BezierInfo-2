@@ -38,7 +38,7 @@
 		<meta property="og:locale" content="en-GB" />
 		<meta property="og:type" content="article" />
 		<meta property="og:published_time" content="2013-06-13T12:00:00+00:00" />
-		<meta property="og:updated_time" content="2023-08-15T15:28:19+00:00" />
+		<meta property="og:updated_time" content="2024-06-19T22:16:27+00:00" />
 		<meta property="og:author" content="Mike 'Pomax' Kamermans" />
 		<meta property="og:section" content="Bézier Curves" />
 		<meta property="og:tag" content="Bézier Curves" />
@@ -133,7 +133,7 @@
 				<ul class="lang-switcher">
 					<li><a href="./index.html">English</a> &nbsp;</li>
 					<li><a href="./ja-JP/index.html">日本語</a> <span class="localisation-progress">(24%)</span></li>
-					<li><a href="./zh-CN/index.html">中文</a> <span class="localisation-progress">(35%)</span></li>
+					<li><a href="./zh-CN/index.html">中文</a> <span class="localisation-progress">(37%)</span></li>
 					<li><a href="./ru-RU/index.html">Русский</a> <span class="localisation-progress">(24%)</span></li>
 					<li><a href="./uk-UA/index.html">Українська</a> <span class="localisation-progress">(2%)</span></li>
 					<li><a href="./ko-KR/index.html">한국어</a> <span class="localisation-progress">(9%)</span></li>
@@ -4977,7 +4977,8 @@ mapped  = (x) = │                                1  2                       �
 						Now, if you look more closely at that right graphic, you'll notice something interesting: if we treat the red line as "the x axis", then
 						the point where the function crosses our line is really just a root for the cubic function x(t) through a shifted "x-axis"... and
 						<a href="#extremities">we've already seen</a> how to calculate roots, so let's just run cubic root finding - and not even the complicated
-						cubic case either: because of the kind of curve we're starting with, we <em>know</em> there is only root, simplifying the code we need!
+						cubic case either: because of the kind of curve we're starting with, we <em>know</em> there is at most a single root in the interval
+						[0,1], simplifying the code we need!
 					</p>
 					<p>First, let's look at the function for x(t):</p>
 					<!--
@@ -5026,7 +5027,7 @@ foreach p in xcoord: p.x -= x
 t = getRoots(p[0], p[1], p[2], p[3])[0]
 
 // find our answer:
-y = curve.get(t).y</textarea
+if t in [0,1] y = curve.get(t).y</textarea
 								>
 							</td>
 						</tr>
